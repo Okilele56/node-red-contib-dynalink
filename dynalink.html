@@ -1,0 +1,80 @@
+<script type="text/x-red" data-template-name="dynalink in">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i>Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-tips">
+        <p>This node provides a dynamic version of the node link. You can dynamically connect two node 'dynalink' based on the topic such as mqtt node</p>
+        <p> For this node the msg in input while go to the dynalink out which have the same topic than `msg.topic` you have to fill the topic so every msg from a dynalink in while come out here </p>
+        <b>topic:</b> the topic to connect our dynalink in and out. (required)<br/>    
+    </div>
+    
+</script>
+<script type="text/x-red" data-help-name="dynalink in">
+    <p>This node provides a dynamic version of the node link. You can dynamically connect two node 'dynalink' based on the topic such as mqtt node</p>
+</script>
+
+
+<script type="text/x-red" data-template-name="dynalink out">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i>Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-tips">
+        <p>This node provides a dynamic version of the node link. You can dynamically connect two node 'dynalink' based on the topic such as mqtt node</p>
+        <p> For this node the msg in input while go to the dynalink out which have the same topic than `msg.topic` you have to fill the topic so every msg from a dynalink in while come out here </p>
+        <b>topic:</b> the topic to connect our dynalink in and out. It must be in the msg <b>msg.topic</b> (required)<br/>    
+    </div>    
+</script>
+<script type="text/x-red" data-help-name="dynalink out">
+    <p>This node provides a dynamic version of the node link</p>
+    <p>You can dynamically connect two node 'dynalink' based on the topic such as mqtt nodeYou can dynamically connect two node 'dynalink' based on the topic such as mqtt node</p>
+    
+    
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('dynalink in',{
+        category: 'common',
+        color:"#ddd",//"#87D8CF",
+        defaults: {
+            name: {value:""},
+            topic: { value: ""}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "font-awesome/fa-sign-in",
+        label: function() {
+            return this.name||'dynalink in';
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+    RED.nodes.registerType('dynalink out',{
+        category: 'common',
+        color:"#ddd",//"#87D8CF",
+        defaults: {
+            name: {value:""},
+            topic: { value: ""}
+        },
+        align:"right",
+        inputs:1,
+        outputs:0,
+        icon: "font-awesome/fa-sign-out",
+        label: function() {
+            return this.name||'dynalink out';
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
