@@ -1,6 +1,6 @@
 # node-red-contrib-dynalink 
 
-![nodes](https://github.com/Okilele56/node-red-contib-dynalink/tree/main/img/nodes.png)
+![nodes](https://github.com/Okilele56/node-red-contib-dynalink/tree/main/img/nodes.PNG)
 
 ## Description 
 
